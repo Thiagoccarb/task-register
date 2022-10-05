@@ -22,11 +22,8 @@ jobs:
             ${{ runner.os }}-build-
             ${{ runner.os }}-
         
-      - name: navigate to folder
-        run: cd frontend
-
-      - name: show folders
-        run: ls -a
-
-      - name: Run the tests
-        run: npm test
+      - name: test frontend
+        run: |
+          cd frontend 
+          ls -a
+          npm test
