@@ -19,7 +19,7 @@ jobs:
     - name: Build app
       run: |
         cd frontend
-        npm run Build
+        npm run build
     - name: Run tests
       run: |
         cd frontend
