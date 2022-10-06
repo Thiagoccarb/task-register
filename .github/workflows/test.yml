@@ -12,11 +12,11 @@ jobs:
       uses: actions/setup-node@v1
       with:
         node-version: ${{ matrix.node-version }}
-    - name: Install dependencies
       run: |
         cd frontend
         npm ci
     - name: Run tests
       run: |
         cd frontend
+        ls -a
         npm run test
