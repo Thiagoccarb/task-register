@@ -1,0 +1,23 @@
+name: test frontend with jest
+on: push
+jobs:
+  jest:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js ${{ matrix.node-version }}
+      - uses: actions/setup-node@v1
+        with:
+          node-version: ${{ matrix.node-version }}
+      - name: Install dependencies
+        run: |
+          cd frontend
+          npm ci
+      - name: Build app
+        run: |
+          cd frontend
+          npm run Build
+      - name: Run tests
+        run: |
+          cd frontend
+          npm run test
